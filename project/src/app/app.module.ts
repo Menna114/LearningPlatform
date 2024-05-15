@@ -19,6 +19,7 @@ import { UpdateInstructorComponent } from './admin/admin-dashboard/dashboard/upd
 import { UpdateStudentComponent } from './admin/admin-dashboard/dashboard/update-student/update-student.component';
 import { ViewInstructorAccountComponent } from './admin/admin-dashboard/dashboard/view-instructor-account/view-instructor-account.component';
 import { ViewStudentAccountComponent } from './admin/admin-dashboard/dashboard/view-student-account/view-student-account.component';
+import { InsertInstructorIdComponent } from './admin/admin-dashboard/dashboard/delete-instructor/insert-instructor-id/insert-instructor-id.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ViewStudentAccountComponent } from './admin/admin-dashboard/dashboard/v
     UpdateStudentComponent,
     ViewInstructorAccountComponent,
     ViewStudentAccountComponent,
+    InsertInstructorIdComponent,
   ],
   imports: [
     CommonModule,
