@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class TestCenterRepService {
 
   private apiUrl = 'http://localhost:8080/UserService-1.0-SNAPSHOT/api/User'; 
 
@@ -15,6 +15,6 @@ export class UserService {
     const user = { email, pass: password };
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post<number>(`${this.apiUrl}/login/student`, user, { headers });
+    return this.http.post<number>(`${this.apiUrl}/login/testcenterrep`, user, { headers });
   }
 }

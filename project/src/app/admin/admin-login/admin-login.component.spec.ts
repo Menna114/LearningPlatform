@@ -25,12 +25,12 @@ describe('AdminLoginComponent', () => {
   });
 
   it('should have initial values for username and password as empty strings', () => {
-    expect(component.username).toEqual('');
+    expect(component.email).toEqual('');
     expect(component.password).toEqual('');
   });
 
   it('should update username and password when input values change', () => {
-    const usernameInput = fixture.nativeElement.querySelector('#username');
+    const usernameInput = fixture.nativeElement.querySelector('#email');
     const passwordInput = fixture.nativeElement.querySelector('#password');
 
     usernameInput.value = 'admin';
@@ -38,7 +38,7 @@ describe('AdminLoginComponent', () => {
     usernameInput.dispatchEvent(new Event('input'));
     passwordInput.dispatchEvent(new Event('input'));
 
-    expect(component.username).toEqual('admin');
+    expect(component.email).toEqual('admin');
     expect(component.password).toEqual('password');
   });
 
@@ -49,5 +49,4 @@ describe('AdminLoginComponent', () => {
     expect(component.login).toHaveBeenCalled();
   });
 
-  // Add more test cases as needed
 });
