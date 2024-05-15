@@ -36,4 +36,7 @@ export class InstructorLoginComponent {
       }
     );
   }
+  navigateToSignup(): void {
+    this.router.navigateByUrl('/instructor/signup');
+  }
 }

@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'testcenterrep/login', component: TestCenterRepComponent },
   { path: 'admin/login', component: AdminLoginComponent },
   { path: 'student/signup', component: StudentSignupComponent },
-  { path: 'instructor/signup/:id',component: InstructorSignupComponent },
+  { path: 'instructor/signup',component: InstructorSignupComponent },
   { path: 'admin/dashboard', component: AdminDashboardComponent }
 ];
 

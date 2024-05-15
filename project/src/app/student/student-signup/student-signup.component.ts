@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StudentSignupService } from './student-signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-signup',
@@ -8,19 +10,40 @@ import { Component } from '@angular/core';
 export class StudentSignupComponent {
   name: string = '';
   email: string = '';
-  password: string = '';
+  pass: string = '';
   affiliation: string = '';
   bio: string = '';
 
-  constructor() {}
+  constructor(private studentSignupService: StudentSignupService, private router: Router) {}
 
-  signup() {
-    // Add your signup logic here
-    console.log('Name:', this.name);
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    console.log('Affiliation:', this.affiliation);
-    console.log('Bio:', this.bio);
-    // Example: Send signup request to server
+  signup(): void {
+    this.studentSignupService.signup(this.name, this.email, this.pass, this.affiliation, this.bio)
+      .subscribe(
+        (response) => {
+          console.log(response)
+          if (response > 0) {
+            console.log('Signup successful! Student ID:', response);
+            // Set the student ID and navigate to the appropriate page
+            //this.router.navigate(['/student/dashboard'], { queryParams: { id: response } });
+          } else if (response === -1) {
+            console.log('Signup failed: Student already exists');
+          } else if (response === -2) {
+            console.log('Signup failed: Database error');
+          } else {
+            console.log('Signup failed: Unknown error');
+          }
+        },
+        error => {
+          console.error('An error occurred during signup:', error);
+        }
+      );
+  }
+
+  private resetForm() {
+    this.name = '';
+    this.email = '';
+    this.pass = '';
+    this.affiliation = '';
+    this.bio = '';
   }
 }

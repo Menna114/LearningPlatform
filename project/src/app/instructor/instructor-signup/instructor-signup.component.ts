@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InstructorSignupService } from './instructor-signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-instructor-signup',
@@ -6,23 +8,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./instructor-signup.component.scss']
 })
 export class InstructorSignupComponent {
-  email: string = '';
-  password: string = '';
   name: string = '';
-  affiliation: string = '';
-  experience: number = 0;
+  email: string = '';
+  pass: string = '';
+  yearsOfExperience: number = 0;
   bio: string = '';
+  affiliation: string = '';
+ 
 
-  constructor() {}
+  constructor(private instructorSignupService: InstructorSignupService, private router: Router) {}
 
-  signup() {
-    // Add your signup logic here
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    console.log('Name:', this.name);
-    console.log('Affiliation:', this.affiliation);
-    console.log('Experience:', this.experience);
-    console.log('Bio:', this.bio);
-    // Example: Send signup request to server
+  signup(): void {
+    this.instructorSignupService.signup(this.name, this.email, this.pass, this.yearsOfExperience, this.bio, this.affiliation)
+      .subscribe(
+        response => {
+          const id=response
+          if (response > 0) {
+            console.log('Signup successful! Instructor ID:', id);
+            //this.router.navigate(['/instructor/dashboard'], { queryParams: { id: response.id } });
+          } else {
+            
+            console.log('Signup failed');
+          }
+        },
+        error => {
+          console.error('An error occurred during signup:', error);
+        }
+      );
   }
 }
