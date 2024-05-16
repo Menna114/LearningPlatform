@@ -1,1 +1,55 @@
-<p>admindashboard works!</p>
+<div class="admin-dashboard-container">
+    <h2>Admin Dashboard</h2>
+  
+    <!-- Generate Credentials Button -->
+    <button (click)="generateCredentials()">Generate Credentials</button>
+  
+    <!-- View Student Account -->
+    <div class="action-section">
+        <h3>View Student Account</h3>
+        <input type="text" [(ngModel)]="studentId" placeholder="Enter Student ID">
+        <button (click)="viewStudent()">View</button>
+        <textarea rows="5" readonly>{{ viewStudentResult | json }}</textarea>
+      </div>
+      
+
+ <!-- View Instructor Account -->
+<div class="action-section">
+    <h3>View Instructor Account</h3>
+    <input type="text" [(ngModel)]="instructorId" placeholder="Enter Instructor ID">
+    <button (click)="viewInstructor()">View</button>
+    <textarea rows="5" readonly>{{ viewInstructorResult | json }}</textarea>
+  </div>
+  
+  
+    <!-- Delete Student Account -->
+  <div class="action-section">
+    <h3>Delete Student Account</h3>
+    <input type="text" [(ngModel)]="studentIdToDelete" placeholder="Enter Student ID">
+    <button (click)="deleteStudent()">Delete</button>
+  </div>
+  
+ <!-- Delete Instructor Account -->
+<div class="action-section">
+    <h3>Delete Instructor Account</h3>
+    <input type="text" [(ngModel)]="instructorIdToDelete" placeholder="Enter Instructor ID">
+    <button (click)="deleteInstructor()">Delete</button>
+  </div>
+  
+  <!-- Update Student Account -->
+<div class="action-section">
+    <h3>Update Student Account</h3>
+    <input type="text" [(ngModel)]="studentIdToUpdate" placeholder="Enter Student ID">
+    <input type="text" [(ngModel)]="newStudentName" placeholder="Enter New Name">
+    <button (click)="updateStudent()">Update</button>
+  </div>
+  
+  <!-- Update Instructor Account -->
+  <div class="action-section">
+    <h3>Update Instructor Account</h3>
+    <input type="text" [(ngModel)]="instructorIdToUpdate" placeholder="Enter Instructor ID">
+    <input type="text" [(ngModel)]="newInstructorName" placeholder="Enter New Name">
+    <button (click)="updateInstructor()">Update</button>
+  </div>
+  
+  

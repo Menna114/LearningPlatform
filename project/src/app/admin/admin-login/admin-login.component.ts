@@ -23,7 +23,7 @@ export class AdminLoginComponent{
           console.log(id);
           console.log(this.email)
           console.log(this.password)
-          //this.router.navigate(['/instructor/signup'],{queryParams:{id:id}});
+          this.router.navigate(['admin/dashboard'],{queryParams:{id:id}});
         } else if (adminId === -1) {
         
           console.log('Incorrect password');

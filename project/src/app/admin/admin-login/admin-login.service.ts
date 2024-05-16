@@ -17,4 +17,9 @@ export class UserService {
 
     return this.http.post<number>(`${this.apiUrl}/login`, user, { headers });
   }
+  viewStudentAccount(id: number){
+    const url = `${this.apiUrl}/viewStudentAccount/${id}`;
+    return this.http.get<any[]>(url,{});
+  }
 }
+
