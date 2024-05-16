@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GenerateCreditComponent } from './generate-credit.component';
+import { AdmindashboardComponent } from './admindashboard.component';
 
-describe('GenerateCreditComponent', () => {
-  let component: GenerateCreditComponent;
-  let fixture: ComponentFixture<GenerateCreditComponent>;
+describe('AdmindashboardComponent', () => {
+  let component: AdmindashboardComponent;
+  let fixture: ComponentFixture<AdmindashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GenerateCreditComponent]
+      declarations: [AdmindashboardComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(GenerateCreditComponent);
+    fixture = TestBed.createComponent(AdmindashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

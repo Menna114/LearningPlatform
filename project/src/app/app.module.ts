@@ -20,6 +20,7 @@ import { UpdateStudentComponent } from './admin/admin-dashboard/dashboard/update
 import { ViewInstructorAccountComponent } from './admin/admin-dashboard/dashboard/view-instructor-account/view-instructor-account.component';
 import { ViewStudentAccountComponent } from './admin/admin-dashboard/dashboard/view-student-account/view-student-account.component';
 import { InsertInstructorIdComponent } from './admin/admin-dashboard/dashboard/delete-instructor/insert-instructor-id/insert-instructor-id.component';
+import { AdmindashboardComponent } from './admin/admin-dashboard/admindashboard/admindashboard.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { InsertInstructorIdComponent } from './admin/admin-dashboard/dashboard/d
     ViewInstructorAccountComponent,
     ViewStudentAccountComponent,
     InsertInstructorIdComponent,
+    AdmindashboardComponent,
   ],
   imports: [
     CommonModule,
