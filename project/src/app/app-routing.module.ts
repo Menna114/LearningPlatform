@@ -7,6 +7,7 @@ import { TestCenterRepComponent } from './testcenterrep/testcenterrep.component'
 import {StudentSignupComponent} from './student/student-signup/student-signup.component';
 import {InstructorSignupComponent} from './instructor/instructor-signup/instructor-signup.component';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
+import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
 
 const routes: Routes = [
   { path: 'student/login', component: StudentLoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'admin/login', component: AdminLoginComponent },
   { path: 'student/signup', component: StudentSignupComponent },
   { path: 'instructor/signup',component: InstructorSignupComponent },
-  { path: 'admin/dashboard', component: AdmindashboardComponent }
+  { path: 'admin/dashboard', component: AdmindashboardComponent },
+  { path: 'instructor/dashboard/:id', component: InstructorDashboardComponent }
 ];
 
 @NgModule({

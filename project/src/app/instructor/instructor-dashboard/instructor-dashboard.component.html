@@ -1,0 +1,9 @@
+<div class="action-section">
+    <h3>Create Course</h3>
+    <input type="text" [(ngModel)]="courseTitle" placeholder="Enter Course Title">
+    <input type="text" [(ngModel)]="courseCategory" placeholder="Enter Course Category">
+    <input type="number" [(ngModel)]="courseDuration" placeholder="Enter Course Duration">
+    <input type="number" [(ngModel)]="courseCapacity" placeholder="Enter Course Capacity">
+    <input type="text" [(ngModel)]="instructorName" placeholder="Enter Instructor Name">
+    <button (click)="createCourse()">Create</button>
+</div>

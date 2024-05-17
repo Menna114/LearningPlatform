@@ -25,7 +25,7 @@ export class InstructorSignupComponent {
           const id=response
           if (response > 0) {
             console.log('Signup successful! Instructor ID:', id);
-            //this.router.navigate(['/instructor/dashboard'], { queryParams: { id: response.id } });
+            this.router.navigate(['/instructor/dashboard'], { queryParams: { id: response.id } });
           } else {
             
             console.log('Signup failed');

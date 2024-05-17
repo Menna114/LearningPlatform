@@ -10,46 +10,74 @@
         <input type="text" [(ngModel)]="studentId" placeholder="Enter Student ID">
         <button (click)="viewStudent()">View</button>
         <textarea rows="5" readonly>{{ viewStudentResult | json }}</textarea>
-      </div>
+    </div>
       
 
- <!-- View Instructor Account -->
-<div class="action-section">
-    <h3>View Instructor Account</h3>
-    <input type="text" [(ngModel)]="instructorId" placeholder="Enter Instructor ID">
-    <button (click)="viewInstructor()">View</button>
-    <textarea rows="5" readonly>{{ viewInstructorResult | json }}</textarea>
-  </div>
+    <!-- View Instructor Account -->
+    <div class="action-section">
+        <h3>View Instructor Account</h3>
+        <input type="text" [(ngModel)]="instructorId" placeholder="Enter Instructor ID">
+        <button (click)="viewInstructor()">View</button>
+        <textarea rows="5" readonly>{{ viewInstructorResult | json }}</textarea>
+    </div>
   
   
     <!-- Delete Student Account -->
-  <div class="action-section">
-    <h3>Delete Student Account</h3>
-    <input type="text" [(ngModel)]="studentIdToDelete" placeholder="Enter Student ID">
-    <button (click)="deleteStudent()">Delete</button>
-  </div>
+    <div class="action-section">
+        <h3>Delete Student Account</h3>
+        <input type="text" [(ngModel)]="studentIdToDelete" placeholder="Enter Student ID">
+        <button (click)="deleteStudent()">Delete</button>
+    </div>
   
- <!-- Delete Instructor Account -->
-<div class="action-section">
-    <h3>Delete Instructor Account</h3>
-    <input type="text" [(ngModel)]="instructorIdToDelete" placeholder="Enter Instructor ID">
-    <button (click)="deleteInstructor()">Delete</button>
-  </div>
+    <!-- Delete Instructor Account -->
+    <div class="action-section">
+        <h3>Delete Instructor Account</h3>
+        <input type="text" [(ngModel)]="instructorIdToDelete" placeholder="Enter Instructor ID">
+        <button (click)="deleteInstructor()">Delete</button>
+    </div>
   
-  <!-- Update Student Account -->
-<div class="action-section">
-    <h3>Update Student Account</h3>
-    <input type="text" [(ngModel)]="studentIdToUpdate" placeholder="Enter Student ID">
-    <input type="text" [(ngModel)]="newStudentName" placeholder="Enter New Name">
-    <button (click)="updateStudent()">Update</button>
-  </div>
+    <!-- Update Student Account -->
+    <div class="action-section">
+        <h3>Update Student Account</h3>
+        <input type="text" [(ngModel)]="studentIdToUpdate" placeholder="Enter Student ID">
+        <input type="text" [(ngModel)]="newStudentName" placeholder="Enter New Name">
+        <button (click)="updateStudent()">Update</button>
+    </div>
   
-  <!-- Update Instructor Account -->
-  <div class="action-section">
-    <h3>Update Instructor Account</h3>
-    <input type="text" [(ngModel)]="instructorIdToUpdate" placeholder="Enter Instructor ID">
-    <input type="text" [(ngModel)]="newInstructorName" placeholder="Enter New Name">
-    <button (click)="updateInstructor()">Update</button>
-  </div>
-  
-  
+    <!-- Update Instructor Account -->
+    <div class="action-section">
+        <h3>Update Instructor Account</h3>
+        <input type="text" [(ngModel)]="instructorIdToUpdate" placeholder="Enter Instructor ID">
+        <input type="text" [(ngModel)]="newInstructorName" placeholder="Enter New Name">
+        <button (click)="updateInstructor()">Update</button>
+    </div>
+
+    <!-- Remove Course -->
+    <div class="action-section">
+        <h3>Remove Course</h3>
+        <input type="text" [(ngModel)]="courseTitleToRemove" placeholder="Enter Course Title">
+        <button (click)="removeCourse()">Remove</button>
+    </div>
+
+    <!-- Edit Course -->
+    <div class="action-section">
+        <h3>Edit Course</h3>
+        <input type="text" [(ngModel)]="courseTitleToEdit" placeholder="Enter Course Title">
+        <input type="number" [(ngModel)]="courseNewCapacity" placeholder="Enter New Capacity">
+        <button (click)="editCourse()">Edit</button>
+    </div>
+
+    <!-- Accept Course -->
+    <div class="action-section">
+        <h3>Accept Course</h3>
+        <input type="text" [(ngModel)]="courseTitleToAccept" placeholder="Enter Course Title">
+        <button (click)="acceptCourse()">Accept</button>
+    </div>
+
+    <!-- Reject Course -->
+    <div class="action-section">
+        <h3>Reject Course</h3>
+        <input type="text" [(ngModel)]="courseTitleToReject" placeholder="Enter Course Title">
+        <button (click)="rejectCourse()">Reject</button>
+    </div>
+</div>

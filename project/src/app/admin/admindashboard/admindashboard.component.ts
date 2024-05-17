@@ -9,6 +9,21 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./admindashboard.component.scss'] // Fixed styleUrl to styleUrls
 })
 export class AdmindashboardComponent {
+rejectCourse() {
+throw new Error('Method not implemented.');
+}
+
+acceptCourse() {
+throw new Error('Method not implemented.');
+}
+
+editCourse() {
+throw new Error('Method not implemented.');
+}
+
+removeCourse() {
+throw new Error('Method not implemented.');
+}
   studentId: any;
   instructorId: any;
   studentIdToDelete: any;
@@ -19,6 +34,11 @@ export class AdmindashboardComponent {
   viewStudentResult: any; // Changed type to any temporarily
   viewInstructorResult: any;
   instructorIdToUpdate:any;
+courseTitleToRemove: any;
+courseTitleToReject: any;
+courseTitleToAccept: any;
+courseTitleToEdit: any;
+courseNewCapacity: any;
 
   constructor(private AdminService: AdminService, private router: Router) {}
 

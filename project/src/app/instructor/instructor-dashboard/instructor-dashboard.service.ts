@@ -2,19 +2,18 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class InstructorDashboardService {
 
-  private apiUrl = 'http://localhost:8080/UserService-1.0-SNAPSHOT/api/User'; 
+  private apiUrl = 'http://localhost:8082/api/course/instructor'; 
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<number> {
-    const user = { email, pass: password };
+  createCourse(course: any, instructorId: number): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.post<number>(`${this.apiUrl}/login/instructor`, user);
+    return this.http.post<any>(`${this.apiUrl}/${instructorId}/addCourse`, course, { headers });
   }
 }

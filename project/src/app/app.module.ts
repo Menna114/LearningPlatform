@@ -12,6 +12,7 @@ import {StudentSignupComponent } from './student/student-signup/student-signup.c
 import {InstructorSignupComponent} from './instructor/instructor-signup/instructor-signup.component';
 import {AdmindashboardComponent} from './admin/admindashboard/admindashboard.component'
 import { AppRoutingModule } from './app-routing.module';
+import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AppRoutingModule } from './app-routing.module';
    StudentLoginComponent,
    StudentSignupComponent,
    AdminLoginComponent,
-   AdmindashboardComponent
+   AdmindashboardComponent,
+   InstructorDashboardComponent
   ],
   imports: [
     CommonModule,

@@ -13,19 +13,17 @@ export class InstructorLoginComponent {
 
   constructor(private userService: UserService, private router: Router) {}
 
-  login():void  {
+  login(): void {
     this.userService.login(this.email, this.password).subscribe(
-      (instructorId: number) => {
-        const id=instructorId
-        if (instructorId > 0) {
-          console.log('Login successful! Instructor ID:', instructorId);
-          console.log(id)
-          console.log(this.email)
-          console.log(this.password)
-          //this.router.navigate(['/instructor/dashboard']);
-        } else if (instructorId === -1) {
+      (response: number) => {
+        if (response > 0) {
+          console.log('Login successful! Instructor ID:', response);
+          console.log(this.email);
+          console.log(this.password);
+          this.router.navigate(['/instructor/dashboard', response]);
+        } else if (response === -1) {
           console.log('Incorrect password');
-        } else if (instructorId === -2) {
+        } else if (response === -2) {
           console.log('User not found');
         } else {
           console.log('Database error');
@@ -36,6 +34,7 @@ export class InstructorLoginComponent {
       }
     );
   }
+  
   navigateToSignup(): void {
     this.router.navigateByUrl('/instructor/signup');
   }
