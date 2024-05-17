@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'student/signup', component: StudentSignupComponent },
   { path: 'instructor/signup',component: InstructorSignupComponent },
   { path: 'admin/dashboard', component: AdmindashboardComponent },
-  { path: 'instructor/dashboard/:id', component: InstructorDashboardComponent }
+  { path: 'instructor/dashboard', component: InstructorDashboardComponent }
 ];
 
 @NgModule({

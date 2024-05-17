@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { InstructorDashboardService } from './instructor-dashboard.service';
-import { InstructorIdService } from '../../InstructorIdService'
+import { InstructorIdService } from '../../InstructorIdService';
 
 @Component({
   selector: 'app-instructor-dashboard',
@@ -14,17 +14,20 @@ export class InstructorDashboardComponent implements OnInit {
   courseDuration: number = 0;
   courseCapacity: number = 0;
   instructorName: string = '';
-  instructorID: any 
+  instructorID: number | null = null;
 
-  constructor(private instructorIdService: InstructorIdService, private instructorDashboardService: InstructorDashboardService) {}
-
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private instructorIdService: InstructorIdService,
+    private instructorDashboardService: InstructorDashboardService
+  ) {}
 
   ngOnInit(): void {
-    // Retrieve the instructor ID from the service
     this.instructorID = this.instructorIdService.getInstructorId();
     console.log('Instructor ID in ngOnInit:', this.instructorID);
   }
-  
+
   createCourse(): void {
     const course = {
       title: this.courseTitle,
@@ -33,11 +36,16 @@ export class InstructorDashboardComponent implements OnInit {
       capacity: this.courseCapacity,
       instructorName: this.instructorName
     };
-
+  
     if (this.instructorID) {
       this.instructorDashboardService.createCourse(course, this.instructorID).subscribe(
         (response: any) => {
-          console.log('Course created successfully:', response);
+          try {
+            const jsonResponse = JSON.parse(response);
+            console.log('Course created successfully:', jsonResponse);
+          } catch (e) {
+            console.log('Course created successfully:', response);
+          }
           // Handle success, maybe navigate to a different page or show a success message
         },
         (error) => {
@@ -49,4 +57,5 @@ export class InstructorDashboardComponent implements OnInit {
       console.log('Invalid instructor ID:', this.instructorID);
     }
   }
+  
 }

@@ -13,6 +13,7 @@ import {InstructorSignupComponent} from './instructor/instructor-signup/instruct
 import {AdmindashboardComponent} from './admin/admindashboard/admindashboard.component'
 import { AppRoutingModule } from './app-routing.module';
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
+import { InstructorIdService } from './InstructorIdService';
 
 
 @NgModule({
@@ -35,7 +36,7 @@ import { InstructorDashboardComponent } from './instructor/instructor-dashboard/
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [InstructorIdService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }
