@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from './instructor-login.service';
 import { Router } from '@angular/router';
-import { InstructorIdService } from '../../InstructorIdService';
+import { UserIdService } from '../../UserIdService';
 
 @Component({
   selector: 'app-instructor-login',
@@ -12,16 +12,14 @@ export class InstructorLoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private userService: UserService, private router: Router, private instructorIdService: InstructorIdService) {}
+  constructor(private userService: UserService, private router: Router, private instructorIdService: UserIdService) {}
 
   login(): void {
     this.userService.login(this.email, this.password).subscribe(
       (response: number) => {
         if (response > 0) {
           console.log('Login successful! Instructor ID:', response);
-          // Store the instructor ID in the service
           this.instructorIdService.setInstructorId(response);
-          // Navigate to the dashboard
           this.router.navigateByUrl('/instructor/dashboard');
         } else if (response === -1) {
           console.log('Incorrect password');

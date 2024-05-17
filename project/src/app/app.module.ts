@@ -13,7 +13,9 @@ import {InstructorSignupComponent} from './instructor/instructor-signup/instruct
 import {AdmindashboardComponent} from './admin/admindashboard/admindashboard.component'
 import { AppRoutingModule } from './app-routing.module';
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
-import { InstructorIdService } from './InstructorIdService';
+import { UserIdService } from './UserIdService';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { TestdenterDashboardComponent } from './testcenterrep/testdenter-dashboard/testdenter-dashboard.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { InstructorIdService } from './InstructorIdService';
    StudentSignupComponent,
    AdminLoginComponent,
    AdmindashboardComponent,
-   InstructorDashboardComponent
+   InstructorDashboardComponent,
+   StudentDashboardComponent,
+   TestdenterDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +40,7 @@ import { InstructorIdService } from './InstructorIdService';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [InstructorIdService],
+  providers: [UserIdService],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }

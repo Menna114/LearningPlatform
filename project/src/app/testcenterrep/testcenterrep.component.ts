@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TestCenterRepService } from './testcenterrep.service'; 
 import { Router } from '@angular/router';
+import { UserIdService } from '../UserIdService';
 
 @Component({
   selector: 'app-testcenterrep',
@@ -11,7 +12,7 @@ export class TestCenterRepComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private testCenterRepService: TestCenterRepService, private router: Router) {}
+  constructor(private testCenterRepService: TestCenterRepService, private router: Router,private testRepId: UserIdService) {}
 
   login(): void {
     const user = {
@@ -23,9 +24,9 @@ export class TestCenterRepComponent {
       testCenterId => {
         const id = testCenterId;
         if (testCenterId > 0) {
+          this.testRepId.setInstructorId(id)
+          this.router.navigateByUrl('/testRep/dashboard');
           console.log('Login successful! Test Center ID:', id);
-          // Redirect to test center rep dashboard or perform necessary actions
-          //this.router.navigate(['/test-center-rep/dashboard']);
         } else if (testCenterId === -1) {
           console.log('Incorrect password');
         } else if (testCenterId === -2) {

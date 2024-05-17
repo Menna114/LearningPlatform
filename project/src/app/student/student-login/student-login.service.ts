@@ -15,6 +15,6 @@ export class UserService {
     const user = { email, pass: password };
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    return this.http.post<number>(`${this.apiUrl}/login/student`, user, { headers });
+    return this.http.post<number>(`${this.apiUrl}/login/student`, user);
   }
 }

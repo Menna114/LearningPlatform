@@ -15,4 +15,15 @@ export class InstructorDashboardService {
     const url = `${this.apiUrl}/instructor/${instructorId}/addCourse`;
     return this.http.post(url, course, { responseType: 'text' });
   }
+  getCourseDetails(title: string): Observable<any> {
+    return this.http.get(`${this.apiUrl}/showCourseByTitle?title=${title}`);
+  }
+
+  getCoursesByCategory(category: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/showCourseByCategory?category=${category}`);
+  }
+
+  getCoursesByRating(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/sortedCoursesByRating`);
+  }
 }

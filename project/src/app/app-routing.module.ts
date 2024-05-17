@@ -8,6 +8,8 @@ import {StudentSignupComponent} from './student/student-signup/student-signup.co
 import {InstructorSignupComponent} from './instructor/instructor-signup/instructor-signup.component';
 import { AdmindashboardComponent } from './admin/admindashboard/admindashboard.component';
 import { InstructorDashboardComponent } from './instructor/instructor-dashboard/instructor-dashboard.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { TestdenterDashboardComponent } from './testcenterrep/testdenter-dashboard/testdenter-dashboard.component'
 
 const routes: Routes = [
   { path: 'student/login', component: StudentLoginComponent },
@@ -17,7 +19,9 @@ const routes: Routes = [
   { path: 'student/signup', component: StudentSignupComponent },
   { path: 'instructor/signup',component: InstructorSignupComponent },
   { path: 'admin/dashboard', component: AdmindashboardComponent },
-  { path: 'instructor/dashboard', component: InstructorDashboardComponent }
+  { path: 'instructor/dashboard', component: InstructorDashboardComponent },
+  { path: 'student/dashboard',component:StudentDashboardComponent},
+  { path: 'testRep/dashboard',component:TestdenterDashboardComponent}
 ];
 
 @NgModule({

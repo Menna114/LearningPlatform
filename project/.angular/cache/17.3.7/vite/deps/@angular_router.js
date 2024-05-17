@@ -1,7 +1,7 @@
 import {
   Title
-} from "./chunk-PEHEFW4X.js";
-import "./chunk-RWIWH72V.js";
+} from "./chunk-7J75QDN2.js";
+import "./chunk-CSNORAQK.js";
 import {
   DOCUMENT,
   HashLocationStrategy,
@@ -10,24 +10,20 @@ import {
   LocationStrategy,
   PathLocationStrategy,
   ViewportScroller
-} from "./chunk-46VL4GRD.js";
+} from "./chunk-NWNMNT2I.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   APP_INITIALIZER,
   ApplicationRef,
   Attribute,
-  BehaviorSubject,
   ChangeDetectorRef,
   Compiler,
   Component,
-  ConnectableObservable,
   Console,
   ContentChildren,
   Directive,
-  EMPTY,
   ENVIRONMENT_INITIALIZER,
   ElementRef,
-  EmptyError,
   EnvironmentInjector,
   EventEmitter,
   HostBinding,
@@ -48,52 +44,20 @@ import {
   Renderer2,
   RuntimeError,
   SkipSelf,
-  Subject,
-  Subscription,
   Version,
   ViewContainerRef,
-  __async,
-  __spreadProps,
-  __spreadValues,
   afterNextRender,
   booleanAttribute,
-  catchError,
-  combineLatest,
-  concat,
-  concatMap,
   createEnvironmentInjector,
-  defaultIfEmpty,
-  defer,
-  filter,
-  finalize,
-  first,
-  from,
   inject,
   isInjectable,
   isNgModule,
-  isObservable,
   isPromise,
   isStandalone,
-  last,
   makeEnvironmentProviders,
-  map,
-  mapTo,
-  mergeAll,
-  mergeMap,
-  of,
-  pipe,
-  refCount,
   reflectComponentType,
   runInInjectionContext,
-  scan,
   setClassMetadata,
-  startWith,
-  switchMap,
-  take,
-  takeLast,
-  takeUntil,
-  tap,
-  throwError,
   ɵɵInputTransformsFeature,
   ɵɵNgOnChangesFeature,
   ɵɵStandaloneFeature,
@@ -114,9 +78,50 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-ORL24GRQ.js";
+} from "./chunk-4F3IVVEX.js";
+import {
+  defer,
+  isObservable
+} from "./chunk-O7KB4ENE.js";
+import "./chunk-SUIE6PAF.js";
+import {
+  BehaviorSubject,
+  ConnectableObservable,
+  EMPTY,
+  EmptyError,
+  Subject,
+  Subscription,
+  __async,
+  __spreadProps,
+  __spreadValues,
+  catchError,
+  combineLatest,
+  concat,
+  concatMap,
+  defaultIfEmpty,
+  filter,
+  finalize,
+  first,
+  from,
+  last,
+  map,
+  mapTo,
+  mergeAll,
+  mergeMap,
+  of,
+  pipe,
+  refCount,
+  scan,
+  startWith,
+  switchMap,
+  take,
+  takeLast,
+  takeUntil,
+  tap,
+  throwError
+} from "./chunk-REN6AY4K.js";
 
-// node_modules/@angular/router/fesm2022/router.mjs
+// ../../../node_modules/@angular/router/fesm2022/router.mjs
 var PRIMARY_OUTLET = "primary";
 var RouteTitleKey = Symbol("RouteTitle");
 var ParamsAsMap = class {

@@ -6,4 +6,46 @@
     <input type="number" [(ngModel)]="courseCapacity" placeholder="Enter Course Capacity">
     <input type="text" [(ngModel)]="instructorName" placeholder="Enter Instructor Name">
     <button (click)="createCourse()">Create</button>
-</div>
+  </div>
+  
+  <div class="view-section">
+    <h3>View Course Details</h3>
+    <input type="text" [(ngModel)]="courseTitleToView" placeholder="Enter Course Title">
+    <button (click)="viewCourseDetails()">View Details</button>
+    <div *ngIf="courseDetails">
+      <h4>Course Details:</h4>
+      <p>Title: {{ courseDetails.title }}</p>
+      <p>Category: {{ courseDetails.category }}</p>
+      <p>Duration: {{ courseDetails.duration }}</p>
+      <p>Capacity: {{ courseDetails.capacity }}</p>
+      <p>Instructor: {{ courseDetails.instructorName }}</p>
+    </div>
+  </div>
+  
+  <div class="category-section">
+    <h3>View Courses by Category</h3>
+    <input type="text" [(ngModel)]="courseCategoryToView" placeholder="Enter Course Category">
+    <button (click)="viewCoursesByCategory()">View Courses</button>
+    <div *ngIf="coursesByCategory.length > 0">
+      <h4>Courses in {{ courseCategoryToView }}:</h4>
+      <ul>
+        <li *ngFor="let course of coursesByCategory">
+          {{ course.title }} - {{ course.instructorName }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="rating-section">
+    <h3>Show Courses by Rating</h3>
+    <button (click)="viewCoursesByRating()">Show Courses</button>
+    <div *ngIf="coursesByRating.length > 0">
+      <h4>Courses Sorted by Rating:</h4>
+      <ul>
+        <li *ngFor="let course of coursesByRating">
+          {{ course.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { StudentSignupService } from './student-signup.service';
 import { Router } from '@angular/router';
+import { UserIdService } from '../../UserIdService';
 
 @Component({
   selector: 'app-student-signup',
@@ -14,17 +15,17 @@ export class StudentSignupComponent {
   affiliation: string = '';
   bio: string = '';
 
-  constructor(private studentSignupService: StudentSignupService, private router: Router) {}
+  constructor(private studentSignupService: StudentSignupService, private router: Router, private studenIdservice: UserIdService) {}
 
   signup(): void {
-    this.studentSignupService.signup(this.name, this.email, this.pass, this.affiliation, this.bio)
+    this.studentSignupService.signup(this.name, this.email, this.pass,this.bio, this.affiliation)
       .subscribe(
         (response) => {
-          console.log(response)
+          console.log(response);
           if (response > 0) {
             console.log('Signup successful! Student ID:', response);
-            // Set the student ID and navigate to the appropriate page
-            //this.router.navigate(['/student/dashboard'], { queryParams: { id: response } });
+            this.studenIdservice.setInstructorId(response); // Make sure this is setting the correct ID type
+            this.router.navigateByUrl('/student/dashboard');
           } else if (response === -1) {
             console.log('Signup failed: Student already exists');
           } else if (response === -2) {

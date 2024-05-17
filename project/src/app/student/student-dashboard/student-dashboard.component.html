@@ -1,0 +1,83 @@
+<div class="dashboard-container">
+    <h2>Student Dashboard</h2>
+  
+    <!-- View Course Details -->
+    <div class="action-section">
+      <h3>View Course Details</h3>
+      <input type="text" [(ngModel)]="courseTitleToView" placeholder="Enter Course Title">
+      <button (click)="viewCourseDetails()">View Details</button>
+      <div *ngIf="courseDetails">
+        <h4>{{ courseDetails.title }}</h4>
+        <p>Category: {{ courseDetails.category }}</p>
+        <p>Duration: {{ courseDetails.duration }}</p>
+        <p>Capacity: {{ courseDetails.capacity }}</p>
+        <p>Instructor: {{ courseDetails.instructorName }}</p>
+        <p>Description: {{ courseDetails.description }}</p>
+        <p>Rating: {{ courseDetails.rating }}</p>
+      </div>
+    </div>
+  
+    <!-- View Courses by Category -->
+    <div class="action-section">
+      <h3>View Courses by Category</h3>
+      <input type="text" [(ngModel)]="courseCategoryToView" placeholder="Enter Course Category">
+      <button (click)="viewCoursesByCategory()">View Courses</button>
+      <ul *ngIf="coursesByCategory.length">
+        <li *ngFor="let course of coursesByCategory">{{ course.title }}</li>
+      </ul>
+      <p *ngIf="coursesByCategory.length === 0">No courses found in this category.</p>
+    </div>
+  
+    <!-- View Courses by Rating -->
+    <div class="action-section">
+      <h3>View Courses by Rating</h3>
+      <button (click)="viewCoursesByRating()">View Courses</button>
+      <ul *ngIf="coursesByRating.length">
+        <li *ngFor="let course of coursesByRating">{{ course.title }} ({{ course.rating }})</li>
+      </ul>
+      <p *ngIf="coursesByRating.length === 0">No courses found.</p>
+    </div>
+
+    <!-- View Enrollments -->
+   <div class="action-section">
+    <h3>View Enrollments</h3>
+    <button (click)="viewEnrollments()">View Enrollments</button>
+  </div>
+  
+  <!-- Cancel Enrollments -->
+  <div class="action-section">
+    <h3>Cancel Enrollments</h3>
+    <button (click)="cancelEnrollments()">Cancel Enrollments</button>
+  </div>
+  
+  <!-- Notifications -->
+  <div class="action-section">
+    <h3>Notifications</h3>
+    <button (click)="viewNotifications()">View Notifications</button>
+  </div>
+
+  <!-- Make Review -->
+<div class="action-section">
+    <h3>Make Review</h3>
+    <div class="form-group">
+      <label for="courseTitle">Course Title:</label>
+      <input type="text" id="courseTitle" name="courseTitle" [(ngModel)]="courseTitle" required>
+    </div>
+    <div class="form-group">
+      <label for="reviewText">Review Text:</label>
+      <textarea id="reviewText" name="reviewText" [(ngModel)]="reviewText" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="rate">Rate:</label>
+      <select id="rate" name="rate" [(ngModel)]="rate" required>
+        <option value="good">Good</option>
+        <option value="bad">Bad</option>
+        <option value="okay">Okay</option>
+      </select>
+    </div>
+    <button (click)="makeReview()">Submit Review</button>
+  </div>
+  
+  
+  </div>
+  

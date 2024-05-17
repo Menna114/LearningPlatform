@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,13 @@ export class StudentSignupService {
 
   constructor(private http: HttpClient) { }
 
-  signup(name: string, email: string, password: string, affiliation: string, bio: string): Observable<any> {
-    const user = { Name: name, Email: email, pass: password, Affiliation: affiliation, Bio: bio };
+  signup(name: string, email: string, pass: string,bio: string, affiliation: string): Observable<any> {
+    const user = { name: name, email: email, pass: pass,bio: bio, affiliation: affiliation };
     console.log('Request payload:', user);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   
-    return this.http.post<number>(`${this.apiUrl}/signin/student`, user);
+    return this.http.post<number>(`${this.apiUrl}/signin/student`, user, { headers })
+      
   }
+
 }
