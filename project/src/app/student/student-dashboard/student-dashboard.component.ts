@@ -9,14 +9,13 @@ import { UserIdService } from '../../UserIdService';
   styleUrls: ['./student-dashboard.component.scss']
 })
 export class StudentDashboardComponent implements OnInit {
-
-courseTitle: any;
-reviewText: any;
-rate: any;
-viewNotifications() {
+makeEnrollment() {
 throw new Error('Method not implemented.');
 }
 cancelEnrollments() {
+throw new Error('Method not implemented.');
+}
+viewNotifications() {
 throw new Error('Method not implemented.');
 }
 viewEnrollments() {
@@ -28,6 +27,9 @@ throw new Error('Method not implemented.');
   courseDetails: any = null;
   coursesByCategory: any[] = [];
   coursesByRating: any[] = [];
+  courseTitle: string = '';
+  reviewText: string = '';
+  rate: string = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -76,9 +78,25 @@ throw new Error('Method not implemented.');
       }
     );
   }
-  
-  makeReview() {
-    throw new Error('Method not implemented.');
+  makeReview(): void {
+    if (this.studentId) {
+      const review = {
+        reviewText: this.reviewText,
+        rate: this.rate // Ensure the rate is set here
+      };
+      this.studentDashboardService.addReview(this.studentId, this.courseTitle, review).subscribe(
+        (response: string) => {
+          console.log('Review submitted successfully:', response);
+          this.courseTitle = '';
+          this.reviewText = '';
+          this.rate = '';
+        },
+        (error) => {
+          console.error('Error submitting review:', error);
+        }
+      );
+    } else {
+      console.error('Student ID is not available.');
     }
+  }
 }
-

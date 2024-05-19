@@ -9,21 +9,6 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./admindashboard.component.scss'] // Fixed styleUrl to styleUrls
 })
 export class AdmindashboardComponent {
-rejectCourse() {
-throw new Error('Method not implemented.');
-}
-
-acceptCourse() {
-throw new Error('Method not implemented.');
-}
-
-editCourse() {
-throw new Error('Method not implemented.');
-}
-
-removeCourse() {
-throw new Error('Method not implemented.');
-}
   studentId: any;
   instructorId: any;
   studentIdToDelete: any;
@@ -147,6 +132,37 @@ courseNewCapacity: any;
       (error) => {
         console.error('An error occurred:', error);
         // Handle error
+      }
+    );
+  }
+  rejectCourse(title: string) {
+    this.AdminService.rejectCourse(title).subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+  }
+
+  acceptCourse(title: string) {
+    this.AdminService.acceptCourse(title).subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+  }
+
+  editCourse(title: string, capacity: number) {
+    this.AdminService.editCourse(title, capacity).subscribe(
+      response => console.log(response),
+      error => console.error(error)
+    );
+  }
+
+  removeCourse(title: string) {
+    this.AdminService.removeCourse(title).subscribe(
+      response => {
+        console.log('Course removed successfully:', response);
+      },
+      error => {
+        console.error('Error removing course:', error);
       }
     );
   }

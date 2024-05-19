@@ -15,11 +15,7 @@ export class StudentDashboardService {
 
   addReview(studentId: number, title: string, review: any): Observable<string> {
     const url = `${this.apiUrl}/${studentId}/addReview?title=${title}`;
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-    return this.http.post<string>(url, review, { headers }).pipe(
-      catchError(this.handleError)
-    );
+    return this.http.post(url, review, { responseType: 'text' });
   }
 
   getCourseDetails(courseTitleToView: string): Observable<any> {
@@ -37,11 +33,11 @@ export class StudentDashboardService {
   }
 
   getSortedCoursesByRating(): Observable<any[]> {
-    const url = `${this.apiUrl2}/sortedCoursesByRating`;
-    return this.http.get<any[]>(url).pipe(
+    return this.http.get<any[]>(`${this.apiUrl2}/sortedCoursesByRating`).pipe(
       catchError(this.handleError)
     );
   }
+  
 
   private handleError(error: any) {
     console.error('An error occurred:', error);

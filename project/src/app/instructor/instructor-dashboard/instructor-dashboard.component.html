@@ -36,16 +36,13 @@
     </div>
   </div>
   
-  <div class="rating-section">
-    <h3>Show Courses by Rating</h3>
-    <button (click)="viewCoursesByRating()">Show Courses</button>
-    <div *ngIf="coursesByRating.length > 0">
-      <h4>Courses Sorted by Rating:</h4>
-      <ul>
-        <li *ngFor="let course of coursesByRating">
-          {{ course.title }}
-        </li>
-      </ul>
+  <div class="container">
+    <h2>Courses Sorted by Rating</h2>
+    <button (click)="viewCoursesByRating()" class="load-button">Load Courses by Rating</button>
+    <div *ngFor="let course of coursesByRating" class="course-card">
+      <h3>{{ course.title }}</h3>
+      <p><strong>Rating:</strong> {{ course.rate }}</p>
     </div>
   </div>
+  
   

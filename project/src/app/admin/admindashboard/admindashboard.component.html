@@ -51,33 +51,21 @@
         <input type="text" [(ngModel)]="newInstructorName" placeholder="Enter New Name">
         <button (click)="updateInstructor()">Update</button>
     </div>
-
-    <!-- Remove Course -->
-    <div class="action-section">
-        <h3>Remove Course</h3>
-        <input type="text" [(ngModel)]="courseTitleToRemove" placeholder="Enter Course Title">
-        <button (click)="removeCourse()">Remove</button>
-    </div>
-
-    <!-- Edit Course -->
-    <div class="action-section">
-        <h3>Edit Course</h3>
-        <input type="text" [(ngModel)]="courseTitleToEdit" placeholder="Enter Course Title">
-        <input type="number" [(ngModel)]="courseNewCapacity" placeholder="Enter New Capacity">
-        <button (click)="editCourse()">Edit</button>
-    </div>
-
-    <!-- Accept Course -->
-    <div class="action-section">
-        <h3>Accept Course</h3>
-        <input type="text" [(ngModel)]="courseTitleToAccept" placeholder="Enter Course Title">
-        <button (click)="acceptCourse()">Accept</button>
-    </div>
-
     <!-- Reject Course -->
-    <div class="action-section">
-        <h3>Reject Course</h3>
-        <input type="text" [(ngModel)]="courseTitleToReject" placeholder="Enter Course Title">
-        <button (click)="rejectCourse()">Reject</button>
-    </div>
+  <input #rejectTitle type="text" placeholder="Course Title to Reject">
+  <button (click)="rejectCourse(rejectTitle.value)">Reject Course</button>
+
+  <!-- Accept Course -->
+  <input #acceptTitle type="text" placeholder="Course Title to Accept">
+  <button (click)="acceptCourse(acceptTitle.value)">Accept Course</button>
+
+  <!-- Edit Course Capacity -->
+  <!-- Edit Course Capacity -->
+  <input #editTitle type="text" placeholder="Course Title to Edit">
+  <input #editCapacity type="number" placeholder="New Capacity">
+  <button (click)="editCourse(editTitle.value, +editCapacity.value)">Edit Course</button>
+  
+  <!-- Remove Course -->
+  <input #removeTitle type="text" placeholder="Course Title to Remove">
+  <button (click)="removeCourse(removeTitle.value)">Remove Course</button>
 </div>

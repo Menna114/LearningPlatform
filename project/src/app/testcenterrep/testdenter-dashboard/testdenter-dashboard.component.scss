@@ -1,68 +1,65 @@
-.dashboard-container {
+/* Styling for the Test Center Representative Dashboard */
+
+/* Container styles */
+.container {
     max-width: 800px;
     margin: 0 auto;
-  
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-  
-    .test-center-info {
-      background-color: #f8f9fa;
-      padding: 20px;
-      border-radius: 8px;
-  
-      h3 {
-        text-align: center;
-        margin-bottom: 10px;
-      }
-  
-      .branches {
-        h4 {
-          margin-bottom: 10px;
-        }
-  
-        ul {
-          list-style-type: none;
-          padding: 0;
-  
-          li {
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            padding: 10px;
-            margin-bottom: 10px;
-  
-            h5 {
-              margin-bottom: 5px;
-            }
-  
-            h6 {
-              margin-top: 10px;
-              margin-bottom: 5px;
-            }
-  
-            ul {
-              list-style-type: none;
-              padding: 0;
-              margin-top: 5px;
-  
-              li {
-                border: 1px solid #ced4da;
-                border-radius: 4px;
-                padding: 5px;
-                margin-bottom: 5px;
-  
-                p {
-                  margin: 0;
-                }
-  
-                &:last-child {
-                  margin-bottom: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    padding: 20px;
   }
+  
+  /* Form styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  /* Input field styles */
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Button styles */
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Branch styles */
+  .branch {
+    margin-bottom: 20px;
+  }
+  
+  .branch label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .branch input[type="text"] {
+    width: calc(100% - 22px); /* Adjusted width to accommodate label */
+  }
+  
+  /* Header styles */
+  h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  

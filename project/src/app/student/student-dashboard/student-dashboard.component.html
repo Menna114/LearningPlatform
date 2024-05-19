@@ -29,14 +29,17 @@
     </div>
   
     <!-- View Courses by Rating -->
-    <div class="action-section">
-      <h3>View Courses by Rating</h3>
-      <button (click)="viewCoursesByRating()">View Courses</button>
-      <ul *ngIf="coursesByRating.length">
-        <li *ngFor="let course of coursesByRating">{{ course.title }} ({{ course.rating }})</li>
-      </ul>
-      <p *ngIf="coursesByRating.length === 0">No courses found.</p>
-    </div>
+    <div class="container">
+        <h2>Courses Sorted by Rating</h2>
+        <button (click)="viewCoursesByRating()" class="load-button">Load Courses by Rating</button>
+        <div *ngFor="let course of coursesByRating" class="course-card">
+          <h3>{{ course.title }}</h3>
+          <p><strong>Rating:</strong> {{ course.rate }}</p>
+        </div>
+      </div>
+      
+      
+      
 
     <!-- View Enrollments -->
    <div class="action-section">
@@ -44,6 +47,11 @@
     <button (click)="viewEnrollments()">View Enrollments</button>
   </div>
   
+  <div class="action-section">
+    <h3>make Enrollment</h3>
+    <button (click)="makeEnrollment()">Make Enrollment</button>
+  </div>
+
   <!-- Cancel Enrollments -->
   <div class="action-section">
     <h3>Cancel Enrollments</h3>
@@ -57,27 +65,28 @@
   </div>
 
   <!-- Make Review -->
-<div class="action-section">
-    <h3>Make Review</h3>
-    <div class="form-group">
-      <label for="courseTitle">Course Title:</label>
-      <input type="text" id="courseTitle" name="courseTitle" [(ngModel)]="courseTitle" required>
-    </div>
-    <div class="form-group">
-      <label for="reviewText">Review Text:</label>
-      <textarea id="reviewText" name="reviewText" [(ngModel)]="reviewText" required></textarea>
-    </div>
-    <div class="form-group">
-      <label for="rate">Rate:</label>
-      <select id="rate" name="rate" [(ngModel)]="rate" required>
-        <option value="good">Good</option>
-        <option value="bad">Bad</option>
-        <option value="okay">Okay</option>
-      </select>
-    </div>
-    <button (click)="makeReview()">Submit Review</button>
+  <div>
+    <h2>Make a Review</h2>
+    <form (ngSubmit)="makeReview()">
+      <div>
+        <label for="courseTitle">Course Title:</label>
+        <input type="text" id="courseTitle" [(ngModel)]="courseTitle" name="courseTitle" required />
+      </div>
+      <div>
+        <label for="reviewText">Review Text:</label>
+        <textarea id="reviewText" [(ngModel)]="reviewText" name="reviewText" required></textarea>
+      </div>
+      <div>
+        <label for="rate">Rate:</label>
+        <select id="rate" [(ngModel)]="rate" name="rate" required>
+          <option value="">Select Rating</option>
+          <option value="GOOD">Good</option>
+          <option value="OKAY">Okay</option>
+          <option value="BAD">Bad</option>
+        </select>
+      </div>
+      <button type="submit">Submit Review</button>
+    </form>
   </div>
-  
-  
   </div>
   

@@ -6,6 +6,26 @@ import { Component } from '@angular/core';
   styleUrl: './testdenter-dashboard.component.scss'
 })
 export class TestdenterDashboardComponent {
+updateTestCenter() {
+throw new Error('Method not implemented.');
+}
+branch: any;
+viewStudentGrade() {
+throw new Error('Method not implemented.');
+}
+viewExamsForBranch() {
+throw new Error('Method not implemented.');
+}
+createExam() {
+throw new Error('Method not implemented.');
+}
+addBranch() {
+throw new Error('Method not implemented.');
+}
+branches: any;
+createTestCenter() {
+throw new Error('Method not implemented.');
+}
 testCenter: any;
 
 }
