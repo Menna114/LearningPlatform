@@ -24,7 +24,7 @@ export class TestCenterRepComponent {
       testCenterId => {
         const id = testCenterId;
         if (testCenterId > 0) {
-          this.testRepId.setInstructorId(id)
+          this.testRepId.setTestRepId(id)
           this.router.navigateByUrl('/testRep/dashboard');
           console.log('Login successful! Test Center ID:', id);
         } else if (testCenterId === -1) {

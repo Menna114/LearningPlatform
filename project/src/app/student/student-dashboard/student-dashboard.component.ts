@@ -82,7 +82,7 @@ throw new Error('Method not implemented.');
     if (this.studentId) {
       const review = {
         reviewText: this.reviewText,
-        rate: this.rate // Ensure the rate is set here
+        rate: this.rate 
       };
       this.studentDashboardService.addReview(this.studentId, this.courseTitle, review).subscribe(
         (response: string) => {

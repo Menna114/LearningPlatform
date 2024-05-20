@@ -31,7 +31,7 @@ export class InstructorSignupComponent {
             this.router.navigateByUrl('/instructor/dashboard');
           } else {
             
-            console.log('Signup failed');
+            console.log('User exists');
           }
         },
         error => {
